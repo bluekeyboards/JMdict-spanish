@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<locatingRules>
+  <locatingRule pattern="*.xml">
+    <documentRule localName="JMdict" target="rules.its"/>
+  </locatingRule>
+</locatingRules>

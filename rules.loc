@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 <locatingRules>
   <locatingRule pattern="*.xml">
     <documentRule localName="JMdict" target="rules.its"/>
   </locatingRule>
+=======
+<?xml version="1.0"?>
+<locatingRules>
+  <locatingRule pattern="*.xml">
+    <documentRule localName="JMdict" target="rules.its"/>
+  </locatingRule>
+>>>>>>> 847af32 (initial commit)
 </locatingRules>

@@ -1,2 +1,2 @@
-Github repository for the JMdict spanish translation project.
-If you'd like to collaborate, join the Transifex team (link) or email me (email).
+Github repository for the JMdict Spanish translation project.
+If you'd like to collaborate, join the [Transifex team](https://explore.transifex.com/jmdict-es/jmdict-es-translation/).

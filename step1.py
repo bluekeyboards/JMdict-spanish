@@ -2,6 +2,8 @@ import re
 with open('JMdict_e.xml', encoding='utf-8') as file:
     filedata = file.read()
     
+
+doc = r'(?<="\?>).*(?=<!-- JMdict created)' # doc info
 g_type = r'(?<=gloss)(\sg_.+?)(?=>)' # gloss attributes
 sense = '<sense>'
 inf1 = '<s_inf>'
@@ -18,6 +20,8 @@ id3 = r'\n<(k|r)_ele>\n<(k|r)eb>'
 collapse1 = '</keb>\\n</k_ele>'
 collapse2 = '</reb>\\n</r_ele>\\n<sense>\\n'
 
+# remove doc info to avoid <sense> errors
+filedata = re.sub(doc, r'\n', filedata, flags=re.M | re.S)
 
 # delete gloss attributes
 filedata = re.sub(g_type, '', filedata, flags=0)
@@ -28,7 +32,7 @@ filedata = re.sub(inf2, ')</gloss>', filedata, flags=0)
 filedata = re.sub(dial, '', filedata, flags=0)
 
 # add nl after <sense>
-filedata = re.sub(sense, '<sense>\\n', filedata, flags=re.S)
+filedata = re.sub(sense, r'<sense>\n', filedata, flags=re.S)
 
 # delete everything between sense and gloss
 filedata = re.sub(tags, '', filedata, flags=re.S)

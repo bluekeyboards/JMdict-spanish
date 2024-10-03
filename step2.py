@@ -7,17 +7,16 @@ with open('JMdict_es.po', encoding='utf-8') as file:
 sub1 = '\\\\n '
 sub2 = '\\\\n'
 sub3 = '"\\\\n"'
-#msgid = r'\\n"\n(?=msgstr)'
+msgid = r'\\n"\n(?=msgstr)'
 
 filedata = re.sub(sub1, '\\\\n"\n"', filedata, flags=0)
 filedata = re.sub(sub2, 'n', filedata, flags=0)
 filedata = re.sub(sub3, '""', filedata, flags=0)
-#filedata = re.sub(msgid, r'"\n', filedata, flags=re.M)
+filedata = re.sub(msgid, r'"\n', filedata, flags=re.M)
 
 #print(filedata)
 
 with open ('JMdict_es.po', 'w', encoding='utf-8') as file:
     file.write(filedata)
-    
 
 file.close()

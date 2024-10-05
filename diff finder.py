@@ -1,4 +1,3 @@
-from contextlib import redirect_stdout
 import re
 
 l = open('differences.txt', 'w', encoding='utf-8')

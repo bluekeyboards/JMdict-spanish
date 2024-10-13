@@ -1,4 +1,4 @@
-py step1.py
+python step1.py
 xgettext -d JMdict_es --its="rules.its" --no-wrap "JMdict_e.xml"
-py "diff finder.py"
-py step2.py
+python "diff finder.py"
+python step2.py

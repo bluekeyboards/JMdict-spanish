@@ -1,7 +1,7 @@
-msgid "the emperor\\\\n"\n
-msgid "hell\\\\n"\n
-msgid "Sharp\\\\n"\n
-msgid "Bond\\\\n"\n
-msgid "Heaven\\\\n"\n
-msgid "Bodhisattva\\\\n"\n
+{'msgid "Heaven\\\\n"\n
 msgid "imperial court\\\\n"\n
+msgid "Bond\\\\n"\n
+msgid "hell\\\\n"\n
+msgid "the emperor\\\\n"\n
+msgid "Sharp\\\\n"\n
+msgid "Bodhisattva\\\\n"\n'}

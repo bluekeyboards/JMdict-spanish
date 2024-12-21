@@ -1,8 +1,11 @@
+# prepares source file for po-ification
+
 import re
 with open('JMdict_e.xml', encoding='utf-8') as file:
     filedata = file.read()
     
 doc = r'(?<="\?>).*(?=<!-- JMdict created)' # doc info
+pri = '\n<entry>(?:(?!ichi1|news1|spec1|spec2|gai1).)*?<\/entry>' # entries without priority
 g_type = r'(?<=gloss)(\sg_.+?)(?=>)' # gloss attributes
 sense = '<sense>'
 inf1 = '<s_inf>'
@@ -21,6 +24,9 @@ collapse2 = '</reb>\\n</r_ele>\\n<sense>\\n'
 
 # remove doc info to avoid <sense> errors
 filedata = re.sub(doc, r'\n', filedata, flags=re.M | re.S)
+
+# remove entries without priority
+filedata = re.sub(pri, '', filedata, flags=re.S)
 
 # delete gloss attributes
 filedata = re.sub(g_type, '', filedata, flags=0)
